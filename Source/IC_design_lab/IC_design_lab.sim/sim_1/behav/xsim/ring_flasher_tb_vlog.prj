@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../IC_design_lab.srcs/sources_1/new" \
+"../../../../IC_design_lab.srcs/sources_1/new/ring_flasher.v" \
+"../../../../IC_design_lab.srcs/sim_1/new/ring_flasher_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
