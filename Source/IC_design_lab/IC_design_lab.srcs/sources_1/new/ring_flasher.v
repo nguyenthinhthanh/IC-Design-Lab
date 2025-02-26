@@ -55,30 +55,41 @@ module ring_flasher(
                 end
                 
                 `CW_ON: begin
-                    leds[count] <= 1;  
-                    count <= count + 1;
+                    leds[count % 16] <= 1;  
+                    //count <= (count + 1) % 16;
+                    if(next_state == `CW_ON) begin
+                        count <= (count + 1) % 16;
+                    end
                 end
                 
                 `CCW_OFF: begin
-                    leds[count] <= 0;
-                    count <= count - 1;
-                    
+                    leds[count % 16] <= 0;
+                    //count <= (count - 1) % 16;
+                    if(next_state == `CCW_OFF) begin
+                        count <= (count - 1) % 16;
+                    end
                 end
                 
                 `TOGGLE_ON: begin
                     leds[count % 16] <= ~leds[count % 16];
-                    count <= count + 1;
+                    //count <= (count + 1) % 16;
+                    if(next_state == `TOGGLE_ON) begin
+                        count <= (count + 1) % 16;
+                    end
                 end
                 
                 `TOGGLE_OFF: begin
                     leds[count % 16] <= ~leds[count % 16];
-                    count <= count - 1;
+                    //count <= (count - 1) % 16;
+                    if(next_state == `TOGGLE_OFF) begin
+                        count <= (count - 1) % 16;
+                    end
                 end
             endcase
         end
     end
 
-    always @(count, repeat_en) begin
+    always @(*) begin
         case (state)
             `IDLE: begin
                     if(repeat_en) begin
@@ -87,9 +98,13 @@ module ring_flasher(
                     else begin
                         next_state = `IDLE;
                     end
+                    
+                    //count = 0;
              end
             `CW_ON: begin
-                if(count == (loop*8-1-(loop-1)*4)) begin
+                //count = (count + 1) % 16;
+            
+                if(count == ((loop*8-1-(loop-1)*4) % 16)) begin
                     next_state = `CCW_OFF;
                 end
                 else begin
@@ -97,7 +112,9 @@ module ring_flasher(
                 end
              end
             `CCW_OFF: begin
-                if(count == (loop*4)) begin
+                //count = (count - 1) % 16;
+            
+                if(count == ((loop*4) % 16)) begin
                     loop = loop + 1;
                     if(loop == 4) begin
                        next_state = `TOGGLE_ON; 
@@ -111,7 +128,9 @@ module ring_flasher(
                 end
              end
             `TOGGLE_ON: begin
-                if(count == (loop*8-1-(loop-1)*4)) begin
+                //count = (count + 1) % 16;
+            
+                if(count == ((loop*8-1-(loop-1)*4) % 16)) begin
                     next_state = `TOGGLE_OFF;
                 end
                 else begin
@@ -119,7 +138,8 @@ module ring_flasher(
                 end
              end
             `TOGGLE_OFF: begin
-                if(count == (loop*4)) begin
+            
+                if(count == ((loop*4) % 16)) begin
                     loop = loop + 1;
                     if(leds == 16'b0) begin
                        next_state = `IDLE; 
@@ -134,6 +154,7 @@ module ring_flasher(
              end
             default:    next_state = `IDLE;
         endcase
+        
     end
 
 endmodule

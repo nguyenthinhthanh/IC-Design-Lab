@@ -41,6 +41,6 @@ module ring_flasher_tb;
         #30 repeat_en = 1; // B?t flasher
         #5 repeat_en = 0;
         
-        #1000 $stop;
+        #2000 $stop;
     end
 endmodule
