@@ -22,10 +22,10 @@
 `include "header.vh"
 
 module ring_flasher(
-    input clk,           // Clock h? th?ng
-    input reset_n,       // Reset m?c th?p ch? ??ng
-    input repeat_en,     // Tín hi?u kích ho?t m?c cao
-    output reg [15:0] leds  // 16 LED tr?ng thái
+    input clk,           
+    input reset_n,       
+    input repeat_en,     
+    output reg [15:0] leds  
 );
 
     reg [2:0] state, next_state;

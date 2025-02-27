@@ -1,0 +1,1 @@
+-wto "0dd820b20cd74326bf3b9000a124fd83" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "ring_flasher_checklist_tb_behav" "xil_defaultlib.ring_flasher_checklist_tb" "xil_defaultlib.glbl" -log "elaborate.log" 

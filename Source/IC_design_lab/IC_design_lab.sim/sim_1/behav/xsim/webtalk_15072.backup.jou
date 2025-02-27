@@ -2,12 +2,11 @@
 # Webtalk v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Thu Feb 27 18:18:18 2025
-# Process ID: 8340
+# Start of session at: Thu Feb 27 18:15:25 2025
+# Process ID: 15072
 # Current directory: D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim/xsim.dir/ring_flasher_checklist_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim/xsim.dir/ring_flasher_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim/xsim.dir/ring_flasher_checklist_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Thu Feb 27 18:18:18 2025...
+source D:/Vivado/Git_Ic_design_lab/Source/IC_design_lab/IC_design_lab.sim/sim_1/behav/xsim/xsim.dir/ring_flasher_tb_behav/webtalk/xsim_webtalk.tcl -notrace
